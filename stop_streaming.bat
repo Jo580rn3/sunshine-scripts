@@ -21,8 +21,8 @@ IF NOT DEFINED HDR set HDR=false
 if not DEFINED USE_RTSS set USE_RTSS=false
 
 :: Disable the virtual display
-devcon disable "MONITOR\LNX0000"
-devcon disable "root\iddsampledriver"
+PNPUTIL /disable-device /deviceid "MONITOR\LNX0000"
+PNPUTIL /disable-device /deviceid "root\iddsampledriver"
 
 :: Wait for the virtual display to be disabled
 timeout /t 3 /nobreak >nul
