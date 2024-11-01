@@ -18,8 +18,8 @@ IF NOT DEFINED SUNSHINE_CLIENT_HDR set SUNSHINE_CLIENT_HDR=false
 if not DEFINED USE_RTSS set USE_RTSS=false
 
 :: Enable the virtual display
-devcon enable "root\iddsampledriver"
-devcon enable "MONITOR\LNX0000"
+PNPUTIL /enable-device /deviceid "root\iddsampledriver"
+PNPUTIL /enable-device /deviceid "MONITOR\LNX0000"
 
 :: Wait for the virtual display to be ready
 timeout /t 3 /nobreak >nul
